@@ -13,7 +13,8 @@ This project is a web application themed around Collectible Sneakers. It is deve
    git clone https://github.com/mertalicikoglu/frontendbaykar.git
 
 2. Install the necessary dependencies:
-    npm install
+   ```bash
+   npm install
 
 Running the Project
 
