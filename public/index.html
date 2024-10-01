@@ -64,13 +64,35 @@
         /* Rectangle Background */
         .rectangle {
             position: absolute;
-            top: 260px;
+            top: 180px;
             right: 0;
             width: 100%;
             height: 1050px;
             background: #FEF3C7;
             clip-path: polygon(100% 0, 100% 100%, 0 100%);
             z-index: -1;
+        }
+
+        /* Responsive adjustments for rectangle */
+        @media (max-width: 1200px) {
+            .rectangle {
+                height: 900px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .rectangle {
+                height: 700px;
+                top: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .rectangle {
+                height: 500px;
+                top: 150px;
+                clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            }
         }
 
         /* Sneaker Section */
@@ -102,7 +124,6 @@
             border-radius: 50px;
             opacity: 1;
             z-index: -1;
-            /* Ensure this is lower than the sneaker image */
         }
 
 
@@ -135,7 +156,6 @@
 
         main {
             min-height: 1200px;
-            /* İstediğiniz yükseklikte ayarlayın */
         }
     </style>
 
@@ -160,9 +180,8 @@
             <div class="rectangle"></div>
 
             <!-- Collectible Sneakers Section -->
-            <div class="sneakers-container">
-                <div class="col-lg-6 d-flex flex-column align-items-start p-0 gap-4"
-                    style="width: 714px; height: 257px;">
+            <div class="sneakers-container" style="padding-top: 163px;">
+                <div class="col-lg-6 d-flex flex-column align-items-start p-0 gap-4" style="margin-bottom: 163px;width: 714px; height: 257px;">
                     <div class="d-flex flex-column align-items-start p-0" style="width: 714px; height: 79px; gap: 8px;">
                         <h1 class="fw-bold"
                             style="font-family: 'Roboto'; font-weight: 800; font-size: 72px; line-height: 110%; color: #0F172A; width: 100%; height: 79px;">
@@ -197,7 +216,7 @@
                 </div>
 
                 <!-- Sneaker Görseli ve Arka Plan için Div -->
-                <div style="position: relative; top: 80px; left: 80px;">
+                <div style="position: relative; top: -60px; left: 80px;">
                     <!-- Arka Plan -->
                     <div class="sneaker-background"></div>
 
