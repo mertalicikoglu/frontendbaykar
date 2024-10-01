@@ -19,7 +19,9 @@ This project is a web application themed around Collectible Sneakers. It is deve
 Running the Project
 
 To run your project in development mode, use the following command:
-npm run serve
+   ```bash
+   npm install
+   ```
 
 Open your browser and visit the following URL:
 http://localhost:8080
