@@ -118,7 +118,6 @@
             height: 372px;
             left: 50%;
             top: 50px;
-            /* 80px below the header */
             transform: translateX(-50%);
             background: #FBBF24;
             border-radius: 50px;
@@ -132,7 +131,6 @@
             height: 388px;
             position: relative;
             z-index: 1;
-            /* Ensure this is higher than the background */
         }
 
         /* Section Below Sneakers */
@@ -157,6 +155,39 @@
         main {
             min-height: 1200px;
         }
+
+        /* Rectangle 25 (Rotated Box) */
+        .rotated-box {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #0369A1;
+            opacity: 0.5;
+            border-radius: 0 0 10px 10px;
+            transform: rotate(45deg);
+            top: 30px;
+            left: 14px;
+            z-index: 2;
+        }
+
+        .content-box {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .icon-container {
+            width: 64px;
+            height: 64px;
+            position: relative;
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+            color: #0F172A;
+        }
     </style>
 
     <title>Sneakers</title>
@@ -180,70 +211,92 @@
             <div class="rectangle"></div>
 
             <!-- Collectible Sneakers Section -->
-            <div class="sneakers-container" style="padding-top: 163px;">
-                <div class="col-lg-6 d-flex flex-column align-items-start p-0 gap-4" style="margin-bottom: 163px;width: 714px; height: 257px;">
-                    <div class="d-flex flex-column align-items-start p-0" style="width: 714px; height: 79px; gap: 8px;">
-                        <h1 class="fw-bold"
-                            style="font-family: 'Roboto'; font-weight: 800; font-size: 72px; line-height: 110%; color: #0F172A; width: 100%; height: 79px;">
-                            Collectible Sneakers
-                        </h1>
-                        <p
-                            style="font-family: 'Roboto'; font-weight: 400; font-size: 18px; line-height: 160%; color: #0F172A; width: 100%; height: 58px;">
-                            Sit elit feugiat turpis sed integer integer accumsan turpis. Sed suspendisse nec lorem
-                            mauris. Pharetra, eu imperdiet ipsum ultrices amet.
-                        </p>
+            <div class="container-fluid sneakers-container" style="padding-top: 163px;">
+                <div class="row align-items-center">
 
-                        <div class="d-flex gap-2" style="width: 347px; height: 56px;">
-                            <button class="btn d-flex justify-content-center align-items-center"
-                                style="border: 2px solid #78350F; border-radius: 8px; padding: 12px 8px; width: 179px; height: 48px;">
-                                <span
-                                    style="font-family: 'Roboto'; font-weight: 500; font-size: 20px; line-height: 24px; letter-spacing: 0.5px; color: #78350F;">Sign
-                                    up now</span>
-                            </button>
+                    <div class="col-lg-6 d-flex flex-column align-items-start p-0 gap-4">
+                        <div class="d-flex flex-column align-items-start p-0" style="gap: 8px;">
+                            <h1 class="fw-bold"
+                                style="font-family: 'Roboto'; font-weight: 800; font-size: 72px; line-height: 110%; color: #0F172A;">
+                                Collectible Sneakers
+                            </h1>
+                            <p
+                                style="font-family: 'Roboto'; font-weight: 400; font-size: 18px; line-height: 160%; color: #0F172A;">
+                                Sit elit feugiat turpis sed integer integer accumsan turpis. Sed suspendisse nec lorem
+                                mauris. Pharetra, eu imperdiet ipsum ultrices amet.
+                            </p>
 
-                            <button class="btn btn-link text-dark d-flex justify-content-center align-items-center"
-                                style="border: 2px solid transparent; border-radius: 8px; padding: 12px 8px; width: 152px; height: 48px; position: relative; isolation: isolate; text-decoration: none;">
-                                <!-- Icon -->
-                                <img src="play-icon.png" alt="Play Icon"
-                                    style="width: 24px; height: 24px; position: relative; margin-right: 8px; z-index: 0;" />
-                                <span
-                                    style="font-family: 'Roboto'; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: 0.5px; color: #78350F; text-decoration: none;">
-                                    Watch Demo
-                                </span>
-                            </button>
+                            <div class="d-flex gap-2">
+                                <button class="btn d-flex justify-content-center align-items-center"
+                                    style="border: 2px solid #78350F; border-radius: 8px; padding: 12px 8px; width: 179px; height: 48px;">
+                                    <span
+                                        style="font-family: 'Roboto'; font-weight: 500; font-size: 20px; line-height: 24px; color: #78350F;">
+                                        Sign up now
+                                    </span>
+                                </button>
+
+                                <button class="btn btn-link text-dark d-flex justify-content-center align-items-center"
+                                    style="border: 2px solid transparent; border-radius: 8px; padding: 12px 8px; width: 152px; height: 48px;">
+                                    <!-- Icon -->
+                                    <img src="play-icon.png" alt="Play Icon"
+                                        style="width: 24px; height: 24px; margin-right: 8px;" />
+                                    <span
+                                        style="font-family: 'Roboto'; font-weight: 500; font-size: 16px; color: #78350F;">
+                                        Watch Demo
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Sneaker Görseli ve Arka Plan için Div -->
-                <div style="position: relative; top: -60px; left: 80px;">
-                    <!-- Arka Plan -->
-                    <div class="sneaker-background"></div>
-
-                    <!-- Sneaker Görseli -->
-                    <img src="sneaker.png" alt="Sneaker" class="img-fluid sneaker-image" />
+                    <!-- Sağ Taraf: Sneaker Görseli ve Arka Plan -->
+                    <div class="col-lg-6 position-relative d-flex justify-content-center align-items-center"
+                        style="height: 100%;">
+                        <!-- Arka Plan -->
+                        <div class="sneaker-background"
+                            style="width: 300px; height: 300px; background-color: #FFC107; border-radius: 20px; position: absolute; top: 50px; z-index: 0;">
+                        </div>
+                        <!-- Sneaker Görseli -->
+                        <img src="sneaker.png" alt="Sneaker" class="img-fluid sneaker-image"
+                            style="position: relative; z-index: 1;" />
+                    </div>
                 </div>
             </div>
+
 
             <!-- Features Section -->
             <div class="container features-section">
                 <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="p-4 bg-white shadow-sm text-center">
+                    <div class="col-md-4 position-relative p-4">
+                        <!-- Arka Plandaki Dönen Kutu -->
+                        <div class="rotated-box"></div>
+
+                        <!-- İçerik Kutusu -->
+                        <div class="bg-white shadow-sm text-start position-relative content-box">
+                            <!-- İkon -->
+                            <div class="d-flex justify-content-center align-items-center mb-3 icon-container">
+                                <img src="icon-trophy.png" alt="Icon Trophy" class="img-fluid">
+                            </div>
+
+                            <!-- Başlık ve Metin -->
                             <p class="fw-semibold fs-5">Nibh viverra</p>
-                            <p class="fs-6">Sit bibendum donec dolor...</p>
+                            <p class="fs-6">Sit bibendum donec dolor fames neque vulputate non sit aliquam. Consequat turpis natoque leo, massa. </p>
                         </div>
                     </div>
+
+
                     <div class="col-md-4">
                         <div class="p-4 bg-white shadow-sm text-center">
                             <p class="fw-semibold fs-5">Cursus amet</p>
-                            <p class="fs-6">Sit bibendum donec dolor...</p>
+                            <p class="fs-6">Sit bibendum donec dolor fames neque vulputate non sit aliquam. Consequat
+                                turpis natoque leo, massa. </p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-white shadow-sm text-center">
                             <p class="fw-semibold fs-5">Ipsum fermentum</p>
-                            <p class="fs-6">Sit bibendum donec dolor...</p>
+                            <p class="fs-6">Sit bibendum donec dolor fames neque vulputate non sit aliquam. Consequat
+                                turpis natoque leo, massa. </p>
                         </div>
                     </div>
                 </div>
