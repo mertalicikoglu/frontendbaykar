@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -65,12 +64,10 @@
         /* Rectangle Background */
         .rectangle {
             position: absolute;
-            top: 200px;
-            /* Sayfanın üst kısmından 80px aşağıda başlar */
+            top: 260px;
             right: 0;
-            /* Sağ tarafta hizalanır */
             width: 100%;
-            height: 100%;
+            height: 1050px;
             background: #FEF3C7;
             clip-path: polygon(100% 0, 100% 100%, 0 100%);
             z-index: -1;
@@ -88,24 +85,33 @@
 
         /* Sneaker Background */
         .sneaker-background {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            gap: 10px;
             position: absolute;
-            /* Dikdörtgeni konumlandırmak için */
             width: 367px;
-            /* Sabit genişlik */
             height: 372px;
-            /* Sabit yükseklik */
-            top: 131px;
-            /* Üstten 131px aşağıda */
-            left: 925px;
-            /* Soldan 925px uzaklık */
+            left: 50%;
+            top: 50px;
+            /* 80px below the header */
+            transform: translateX(-50%);
             background: #FBBF24;
-            /* Belirtilen arka plan rengi */
             border-radius: 50px;
-            /* Tüm köşeler için yuvarlama */
             opacity: 1;
-            /* Görünmez (0) */
             z-index: -1;
-            /* Diğer içeriklerin arkasında yer alması için */
+            /* Ensure this is lower than the sneaker image */
+        }
+
+
+        .sneaker-image {
+            width: 486px;
+            height: 388px;
+            position: relative;
+            z-index: 1;
+            /* Ensure this is higher than the background */
         }
 
         /* Section Below Sneakers */
@@ -125,6 +131,11 @@
 
         .btn-link {
             text-decoration: none;
+        }
+
+        main {
+            min-height: 1200px;
+            /* İstediğiniz yükseklikte ayarlayın */
         }
     </style>
 
@@ -160,7 +171,8 @@
                         <p
                             style="font-family: 'Roboto'; font-weight: 400; font-size: 18px; line-height: 160%; color: #0F172A; width: 100%; height: 58px;">
                             Sit elit feugiat turpis sed integer integer accumsan turpis. Sed suspendisse nec lorem
-                            mauris. Pharetra, eu imperdiet ipsum ultrices amet.</p>
+                            mauris. Pharetra, eu imperdiet ipsum ultrices amet.
+                        </p>
 
                         <div class="d-flex gap-2" style="width: 347px; height: 56px;">
                             <button class="btn d-flex justify-content-center align-items-center"
@@ -183,10 +195,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <img src="sneaker.png" alt="Sneaker" class="img-fluid">
+
+                <!-- Sneaker Görseli ve Arka Plan için Div -->
+                <div style="position: relative; top: 80px; left: 80px;">
+                    <!-- Arka Plan -->
+                    <div class="sneaker-background"></div>
+
+                    <!-- Sneaker Görseli -->
+                    <img src="sneaker.png" alt="Sneaker" class="img-fluid sneaker-image" />
                 </div>
-                <div class="sneaker-background"></div>
             </div>
 
             <!-- Features Section -->
