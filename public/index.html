@@ -65,8 +65,10 @@
         /* Rectangle Background */
         .rectangle {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 200px;
+            /* Sayfanın üst kısmından 80px aşağıda başlar */
+            right: 0;
+            /* Sağ tarafta hizalanır */
             width: 100%;
             height: 100%;
             background: #FEF3C7;
@@ -82,6 +84,28 @@
             align-items: center;
             gap: 80px;
             height: 583px;
+        }
+
+        /* Sneaker Background */
+        .sneaker-background {
+            position: absolute;
+            /* Dikdörtgeni konumlandırmak için */
+            width: 367px;
+            /* Sabit genişlik */
+            height: 372px;
+            /* Sabit yükseklik */
+            top: 131px;
+            /* Üstten 131px aşağıda */
+            left: 925px;
+            /* Soldan 925px uzaklık */
+            background: #FBBF24;
+            /* Belirtilen arka plan rengi */
+            border-radius: 50px;
+            /* Tüm köşeler için yuvarlama */
+            opacity: 1;
+            /* Görünmez (0) */
+            z-index: -1;
+            /* Diğer içeriklerin arkasında yer alması için */
         }
 
         /* Section Below Sneakers */
@@ -140,24 +164,21 @@
 
                         <div class="d-flex gap-2" style="width: 347px; height: 56px;">
                             <button class="btn d-flex justify-content-center align-items-center"
-                                style="border: 2px solid #78350F; border-radius: 8px; padding: 12px; width: 179px; height: 56px;">
+                                style="border: 2px solid #78350F; border-radius: 8px; padding: 12px 8px; width: 179px; height: 48px;">
                                 <span
                                     style="font-family: 'Roboto'; font-weight: 500; font-size: 20px; line-height: 24px; letter-spacing: 0.5px; color: #78350F;">Sign
                                     up now</span>
                             </button>
-                            <button class="btn btn-link text-dark d-flex justify-content-center align-items-center"
-                                style="border: 2px solid transparent; border-radius: 8px; padding: 12px 8px; width: 152px; height: 48px; position: relative; isolation: isolate;">
 
+                            <button class="btn btn-link text-dark d-flex justify-content-center align-items-center"
+                                style="border: 2px solid transparent; border-radius: 8px; padding: 12px 8px; width: 152px; height: 48px; position: relative; isolation: isolate; text-decoration: none;">
                                 <!-- Icon -->
                                 <img src="play-icon.png" alt="Play Icon"
                                     style="width: 24px; height: 24px; position: relative; margin-right: 8px; z-index: 0;" />
-
                                 <span
                                     style="font-family: 'Roboto'; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: 0.5px; color: #78350F; text-decoration: none;">
                                     Watch Demo
                                 </span>
-
-
                             </button>
                         </div>
                     </div>
@@ -165,6 +186,7 @@
                 <div class="col-lg-6">
                     <img src="sneaker.png" alt="Sneaker" class="img-fluid">
                 </div>
+                <div class="sneaker-background"></div>
             </div>
 
             <!-- Features Section -->
